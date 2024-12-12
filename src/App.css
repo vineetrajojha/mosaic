@@ -1,0 +1,436 @@
+body {
+  background-image: url('bg1.png');
+  background-size: cover;
+  background-position: top left;
+  background-repeat: repeat;
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.image-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: white;
+  padding: 10px 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  font-size: 2.2rem;
+  align-items: center;
+  width: 52%;
+  height: 70px;
+  padding: 0 10px;
+  margin: 20px auto;
+  transition: background-color 0.3s, transform 0.3s;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+  border: 2px solid rgb(212, 236, 134);
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+
+.nav-links {
+  font-family: "Montserrat", sans-serif;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+  transform: scale(1.2);
+  color: coral;
+}
+
+.auth-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.auth-links a:hover {
+  transform: scale(1.2);
+  color: coral;
+}
+
+.hero-section {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  color: white;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@keyframes smooth-glow {
+  0% {
+    opacity: 0.8;
+    text-shadow: 0 0 5px yellow;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 10px yellow;
+  }
+  100% {
+    opacity: 0.8;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes smooth-glow2 {
+  0% {
+    opacity: 0.8;
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+  }
+  100% {
+    opacity: 0.8;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.hero-content h1 {
+  color: yellow;
+  font-size: 9em;
+  animation: smooth-glow 5s infinite;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hero-content h2 {
+  color: white;
+  margin-top: -100px;
+  font-size: 2.6em;
+  text-align: center;
+}
+
+#countdown-timer {
+  font-size: 5em;
+  color: rgb(255, 255, 255);
+  border: 3px solid;
+  border-radius: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 20px;
+  animation: smooth-glow2 1s infinite;
+  -webkit-text-stroke: 0.1px rgb(0, 0, 0);
+}
+
+.hero-content .btn {
+
+  margin-top: 30px;
+  padding: 20px 40px;
+  font-size: 2.2em;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 8px 20px rgb(0, 0, 0);
+}
+
+.hero-content .btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+@keyframes rotateImage {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotating-image {
+  position: absolute;
+  top: 1120px;
+  right: -130px;
+  width: 320px;
+  height: 340px;
+  animation: rotateImage 400s linear infinite;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.rotating-image.bottom-left {
+  top: auto;
+  width: 550px;
+  height: 550px;
+  bottom: -200px;
+  right: auto;
+  left: -190px;
+}
+
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-section video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  filter: grayscale(100%);
+}
+
+.event-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  color: white;
+  background-color: transparent;
+}
+
+.event-section h1, h2 {
+  font-family: "Cedarville Cursive", cursive;
+  font-size: 4em;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  animation: smooth-glow 5s infinite;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.event-section p {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.event-section .event {
+  width: 80%;
+  height: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: 2px solid;
+  border-radius: 10px;
+  margin: 20px 0;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-section .event:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.event {
+  
+  justify-content: center;
+  width: 30%;
+  height: 300px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: url('bg1.jpg'); /* Replace with the actual path to your PNG */
+  background-size: cover; /* Ensures the image covers the entire box */
+  background-position: center; /* Centers the image within the box */
+  background-color: rgba(0, 0, 0, 0.4); /* Adds a semi-transparent black overlay */
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  color: white;
+  border: 2px solid;
+  border-radius: 20px;
+  margin: 20px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: inline-block;
+  font-size: larger;
+  border-style: none;
+}
+
+.events::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.event:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.events-container {
+  display: flex;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+  overflow-x: hidden; /* Hide horizontal scroll */
+  position: relative;
+  gap: 20px; /* Space between cards */
+}
+
+.events-container .event {
+  scroll-snap-align: center;
+}
+
+.events-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Hide overflow to keep the slider within bounds */
+}
+
+.events-container {
+  display: flex;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for sliding */
+}
+
+.event {
+  width: 33.33%; /* Adjusted for 3 cards in the slider */
+  flex-shrink: 0; /* Prevent the event items from shrinking */
+}
+
+.arrow-btn {
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  border:  solid white;  /* White border */
+  padding: 5px;  /* Smaller size for better fit */
+  color: rgb(255, 254, 254);
+  font-size: 1.1em;  /* Slightly smaller font size */
+  border-radius: 10%;  /* Round shape */
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+
+.arrow-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);  /* Darker background on hover */
+  transform: translateY(-50%) scale(1.1);  /* Slight zoom effect on hover */
+}
+
+.arrow-btn.left {
+  left: 5px;  /* Space from the left side */
+}
+
+.arrow-btn.right {
+  right: 5px;  /* Space from the right side */
+}
+
+
+.btn1 {
+  font-family: "Bebas Neue", sans-serif;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  color: rgb(255, 255, 255);
+  background-color: #591617;
+  border: 2px solid #591617;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.btn1:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.about-section {
+  display: flex;
+  font-family: "Cedarville Cursive", cursive;
+  font-weight: 300;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 100%;
+  font-size: 1em;
+  text-align: center;
+  color: white;
+  background-color: transparent;
+}
+
+.about-section h2 {
+  font-size: 5rem;
+  color: rgb(255, 255, 255);
+  animation: smooth-glow 5s infinite;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.about-section p {
+  font-size: 1.3rem;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.about-section #p2 {
+  font-size: 1.4rem;
+  color: rgb(255, 255, 255);
+}
