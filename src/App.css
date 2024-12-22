@@ -1,16 +1,49 @@
-body {
-  background-image: url('bg.jpg');
-  background-size:auto;
-  background-position: top left;
-  background-repeat: repeat;
-  margin: 0;
-  overflow-x: hidden;
-  
-}
+@font-face {
+  font-family: 'Alike Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Alike Regular'), url('./fonts/Alike-Regular.woff') format('woff');
+  }
+
+
+ @font-face {
+    font-family: 'Georgia Pro Cond';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Georgia Pro Cond'), url('./fonts/GeorgiaPro-CondRegular.woff') format('woff');
+    }
+
+
+    body {
+      background: none;
+      margin: 0;
+      overflow-x: hidden;
+      position: relative;
+    }
+    
+    body::before {
+      background-color: black;
+      content: '';
+      position:fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(./images/ss.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: repeat;
+      opacity: 1; /* Adjust this value for more/less opacity */
+      z-index: -1; /* Keeps it behind all content */
+    }
+    
+
+
 
 html {
   scroll-behavior: smooth;
 }
+
 
 .hero {
   display: flex;
@@ -19,24 +52,6 @@ html {
   height: 100vh; /* Make the hero section take up the entire viewport height */
   background-color: #f0f0f0; /* Background color */
   position: relative;
-}
-
-@keyframes smooth-glow3 {
-  0% {
-    opacity: 0.8;
-    filter: blur(0.5px); /* Apply blur to the image */
-    text-shadow: 0 0 5px yellow, 0 0 10px yellow, 0 0 15px yellow; /* Yellow glow for text */
-  }
-  50% {
-    opacity: 1;
-    filter: blur(1px); /* Stronger blur effect */
-    text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow; /* Stronger yellow glow */
-  }
-  100% {
-    opacity: 0.8;
-    filter: blur(0.5px); /* Return to initial blur */
-    text-shadow: 0 0 5px yellow, 0 0 10px yellow, 0 0 15px yellow; /* Return to initial yellow glow */
-  }
 }
 
 .hero-logo {
@@ -76,7 +91,7 @@ nav {
   transition: background-color 0.3s, transform 0.3s;
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: overlay;
-  border: 2px solid rgb(212, 236, 134);
+  border: 2px solid rgb(85, 81, 109);
   border-radius: 50px;
   box-sizing: border-box;
 }
@@ -138,26 +153,11 @@ nav {
 @keyframes smooth-glow {
   0% {
     opacity: 0.8;
-    text-shadow: 0 0 5px yellow;
+    text-shadow: 0 0 5px rgb(85, 81, 109);
   }
   50% {
     opacity: 1;
-    text-shadow: 0 0 10px yellow;
-  }
-  100% {
-    opacity: 0.8;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-  }
-}
-
-@keyframes smooth-glow2 {
-  0% {
-    opacity: 0.8;
-    text-shadow: 0 0 5px rgb(255, 255, 255);
-  }
-  50% {
-    opacity: 1;
-    text-shadow: 0 0 10px rgb(255, 255, 255);
+    text-shadow: 0 0 10px rgb(85, 81, 109);
   }
   100% {
     opacity: 0.8;
@@ -166,9 +166,9 @@ nav {
 }
 
 .hero-content h1 {
-  font-family: "Arizonia", serif;
+  font-family: 'Georgia Pro Cond';
   font-style: normal;
-  color: yellow;
+  color: rgb(255, 255, 255);
   font-size: 15em; /* Increase the font size to a larger value */
   animation: smooth-glow 5s infinite;
   text-align: center;
@@ -178,8 +178,8 @@ nav {
 
 
 .hero-content h2 {
-  
-  color: white;
+  font-family: 'Georgia Pro Cond';
+  color: rgb(255, 255, 255);
   margin-top: -100px;
   font-size: 2.6em;
   text-align: center;
@@ -188,7 +188,7 @@ nav {
 #countdown-timer {
   font-size: 5em;
   color: rgb(255, 255, 255);
-  border: 3px solid;
+  border: 3px solid rgb(178, 169, 231);
   border-radius: 20px;
   transition: background-color 0.3s, transform 0.3s;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
@@ -201,19 +201,20 @@ nav {
   
   /* Adding the background image */
   background-image: url('');
-  background-size: contain;        /* Ensures the image covers the entire box */
-  background-position: center;    /* Centers the image */
-  background-repeat: repeat;   /* Prevents the image from repeating */
+  background-size: contain;        
+  background-position: center;    
+  background-repeat: repeat;   
 }
 
 
 .hero-content .btn {
+  font-family: 'Georgia Pro Cond';
   margin-top: 30px;
-  padding: 20px 40px;
-  font-size: 2.2em;
-  background-color: rgba(127, 125, 64, 0.915);
+  padding: 20px 30px;
+  font-size: 2em;
+  background-color: rgba(120, 56, 154, 0.915);
   color: white;
-  border: none;
+  border: 2px solid;
   border-radius: 20px;
   cursor: pointer;
   text-decoration: none;
@@ -287,8 +288,8 @@ nav {
   background-color: transparent;
 }
 
-.event-section h1, h2 {
-  font-family: "Cedarville Cursive", cursive;
+.event-section h1, h2{
+  font-family: 'Georgia Pro Cond';
   font-size: 4em;
   text-align: center;
   color: rgb(255, 255, 255);
@@ -297,7 +298,7 @@ nav {
 }
 
 .event-section p {
-  font-family: "Arizonia", serif;
+  font-family: 'Alike Regular';
   font-size: 1em;
   margin-bottom: 20px;
 }
@@ -337,6 +338,7 @@ nav {
   background-position: center;  /* Centers the image within the box */
   background-blend-mode: overlay;
   background-repeat: no-repeat;
+  border: 3px solid rgb(178, 169, 231);
 }
 
 .events-container .event:hover {
@@ -372,36 +374,9 @@ nav {
   overflow: hidden; /* Keeps the slider content within bounds */
 }
 
-.arrow-btn {
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.5);
-  border: solid white;  /* White border */
-  padding: 5px;  /* Smaller size for better fit */
-  color: rgb(255, 254, 254);
-  font-size: 1.1em;  /* Slightly smaller font size */
-  border-radius: 10%;  /* Round shape */
-  cursor: pointer;
-  z-index: 10;
-  transition: all 0.3s ease-in-out;
-}
-
-.arrow-btn:hover {
-  background-color: rgba(0, 0, 0, 0.7);  /* Darker background on hover */
-  transform: translateY(-50%) scale(1.1);  /* Slight zoom effect on hover */
-}
-
-.arrow-btn.left {
-  left: 5px;  /* Space from the left side */
-}
-
-.arrow-btn.right {
-  right: 5px;  /* Space from the right side */
-}
 
 .btn1 {
+  
   font-family: "Bebas Neue", sans-serif;
   padding: 10px 20px;
   font-size: 1.5em;
@@ -427,8 +402,6 @@ nav {
 
 .about-section {
   display: flex;
-  font-family: "Cedarville Cursive", cursive;
-  font-weight: 300;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -449,6 +422,7 @@ nav {
 }
 
 .about-section p {
+  font-family: 'Alike Regular';
   font-size: 1.3rem;
   color: rgb(255, 255, 255);
   text-align: center;
@@ -486,6 +460,7 @@ nav {
 }
 
 .about-section1 p {
+  font-family: 'Alike Regular';
   font-size: 1.3rem;
   color: rgb(255, 255, 255);
   text-align: center;
@@ -505,6 +480,7 @@ nav {
   }
 
   .hero-content h1 {
+    font-family: 'Georgia Pro Cond';
     font-size: 5em;
   }
 
@@ -541,6 +517,7 @@ nav {
   }
 
   .about-section p {
+    font-family: 'Alike Regular';
     font-size: 1.1rem;
   }
 }
@@ -553,6 +530,7 @@ nav {
   }
 
   .hero-content h1 {
+    font-family: 'Georgia Pro Cond';
     font-size: 7em;
   }
 
@@ -573,6 +551,7 @@ nav {
   }
 
   .about-section p {
+    font-family: 'Alike Regular';
     font-size: 1.2rem;
   }
 }
@@ -584,6 +563,7 @@ nav {
   }
 
   .hero-content h1 {
+    font-family: 'Georgia Pro Cond';
     font-size: 9em;
   }
 
@@ -601,6 +581,7 @@ nav {
   }
 
   .about-section p {
+    font-family: 'Alike Regular';
     font-size: 1.3rem;
   }
 }
@@ -615,6 +596,7 @@ nav {
 }
 
 .gallery-container {
+  
   display: flex;
   flex-direction: column;
   align-items: center;
